@@ -1,0 +1,101 @@
+Variables in Go
+What is a Variable?
+In Go, a variable is a named storage location that holds a value. This value can change during program execution. Think of it as a container with a label (the variable name) that can hold different items (the values) over time.
+Declaring Variables
+There are two primary ways to declare variables in Go:
+1. Using the var keyword:
+
+var variable_name type
+
+
+This syntax explicitly declares a variable with its type. For example:
+
+var age int
+var name string
+
+Redeclaring:
+
+age += 10 
+name = “Vishnu”
+
+2. Using the var keyword:
+const variable_name type
+
+This syntax explicitly declares a constant variable with its type, and any re-declaration of value is not allowed and throws error. For example:
+
+const age int = 0
+const name string = "Vishnu"
+
+Redeclaring:
+
+age += 10 
+Errors:
+cannot assign to age (neither addressable nor a map index expression)
+
+3. Short declaration (:=):
+
+variable_name := value
+
+
+This is a shorthand for declaring and initializing a variable in a single line. The compiler infers the type from the value.
+
+name := "Alice"
+age := 30
+
+
+
+
+Variable Types
+Go is a statically typed language, meaning the type of a variable is determined at compile time. Here are some common data types:
+Basic Types:
+
+
+bool: Boolean value (true or false)
+int: Integer (depending on the architecture, can be int8, int16, int32, or int64)
+uint: Unsigned integer (uint8, uint16, uint32, or uint64)
+float32: Single-precision floating-point number
+float64: Double-precision floating-point number
+complex64: Complex number with float32 real and imaginary parts
+complex128: Complex number with float64 real and imaginary parts  
+byte: Alias for uint8
+rune: Alias for int32 (represents a Unicode code point)  
+string: Sequence of bytes representing UTF-8 encoded text
+
+Composite Types:
+
+
+array: Fixed-length sequence of elements of the same type
+slice: Dynamically sized, flexible view into an array
+struct: Collection of named fields with different types
+map: Unordered collection of key-value pairs
+channel: Used for concurrent programming
+Variable Naming Conventions
+Start with a letter or underscore.
+Can contain letters, numbers, and underscores.
+Case-sensitive.
+Use descriptive names to improve code readability.
+Example
+
+package main
+
+import "fmt"
+
+func main() {
+    // Declare variables
+    var age int = 30
+    const isMarried bool = true or false
+    name := "Bob"
+    isStudent := true
+
+    // Print values
+    fmt.Println("Name:", name)
+    fmt.Println("Age:", age)
+    fmt.Println("Is Student:", isStudent)
+}
+
+Important Points
+Variables must be declared before use.
+The value of a variable can be changed.
+Go is strongly typed, so you cannot assign a value of one type to a variable of a different type without explicit conversion.
+Go automatically initializes variables to their zero values (0 for numeric types, false for bool, "" for string, etc.) if not explicitly assigned.
+By understanding these concepts, you have a solid foundation for working with variables in Go.
